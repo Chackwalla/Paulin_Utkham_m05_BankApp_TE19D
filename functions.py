@@ -11,6 +11,8 @@ def balance():
         balance += t
     return balance
 
+
+
 def validate_int(output, error_mess):
     """Validerar inmatat värde
 
@@ -25,6 +27,8 @@ def validate_int(output, error_mess):
         except:
             print(error_mess)
     return value
+
+
 
 def print_transactions():
     """ Skapar utskrift av alla transaktioner
@@ -42,3 +46,31 @@ def print_transactions():
         output += ("\n{:>2}. {:>9} kr".format(line, t, balance))
 
     return output
+
+
+
+def check_file_exists():
+    """Om filen inte finns så skapas den och sedan läggs en transaktion till
+       Eftersom "x" returnerar ett error om filen finns kan vi utnyttja detta.
+    :return: None
+    """
+    try:
+        with open(filename, "x"):
+            print("Filen skapades")
+
+        with open(filename, "a") as f:
+            f.write("{}\n".format(1000))
+    except:
+        return
+
+
+
+def read_file():
+    """Läser in filens innehåll till transaktionslistan
+
+    :return: none
+    """
+    with open(filename) as f:
+        for rad in f:
+            if len(rad) > 0:
+                transactions.append(int(rad))

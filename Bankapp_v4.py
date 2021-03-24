@@ -1,10 +1,13 @@
+#Will continue tomorrow at '8.4 Skriv transaktioner till filen'
 # Planning :
 # Imports 
 # Functions
 from functions import *
 
+check_file_exists()
+read_file()
+
 # Variabler 
-transactions.append(1000)   # Lägger till startbeloppet på 1000kr
 
 # Main loop
 # Input of text
